@@ -5,7 +5,9 @@ const config: Config = {
   testEnvironment: "node",
   collectCoverage: true,
   preset: "ts-jest",
-  setupFilesAfterEnv: ["./test-config.ts"]
+  setupFilesAfterEnv: ["./test-config.ts"],
+  testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"]
 };
 
 export default config;
