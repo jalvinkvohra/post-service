@@ -1,0 +1,16 @@
+name: Continues Integration
+run-name: ${{ github.actor }} has committed changes
+on: push
+jobs:
+  test:
+    strategy:
+      matrix:
+        node-version: ["20.x"]
+    runs-on: ${{ matrix.paltform }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - run: npm install
+      - run: npm test
